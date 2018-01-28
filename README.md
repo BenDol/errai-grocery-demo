@@ -1,52 +1,28 @@
-Errai Multi-Module Demo
-=======================
+Errai-Bus Stress Test Example App
+=================================
 
-Note: this demo application is not done yet! See the TODO section below for an outline of
-what remains to be done.
+This simple application serves both as an example of how to use the GWT UiBinder
+framework within Errai, as well as an easy way of testing bus throughput in your
+own environment.
 
+Building it
+-----------
 
-This demo app shows how to use the following technologies together:
+To build the app, test it, and produce a WAR file suitable for deployment to your app server,
+execute the following command:
 
- * ErraiCDI
- * ErraiJPA
- * ErraiUI
- * Errai Data Binding
- * Bean Validation (TODO)
- * Twitter Bootstrap
+    mvn clean package -Pintegration-test -P<app-server-profile>
 
-Try It Out
-==========
-
-To try it in dev mode, ensure you have Maven 3 installed, then type the following at a command prompt:
-
-    % mvn gwt:run
-
-To build a .war file that you can deploy to Wildfly 8 or the OpenShift cloud:
-
-    % mvn clean package -Pwildfly
-
-Then copy target/errai-jpa-demo-grocery-list.war to the appropriate location.
+Available app server profile names are wildfly and tomcat. Remember to clean every
+time you build for a different app server.
 
 
-TODO
-====
+Running it in Dev Mode
+----------------------
 
-This app is currently a work in progress. The following items remain to be done:
+To run the app in GWT Dev Mode, execute the command
 
- * Checking off an item (by click or swipe gesture)
- * Editing an existing item (by double click on it)
- * Sort items by:
-   * Name
-   * Department name
-     * Alphabetically
-     * In "store order" (order of visiting departments when walking through store)
-     * With location awareness to suggest a store automatically
-   * Date added
- * The Stores page
-   * Basic add/remove functionality
-   * Defining the order of departments within the store
-   * Google Maps integration for setting store's location
- * Use Bean Validation annotations on the Store, Department, Item entities; validate before submitting to local storage
- * Sync data to server using Errai Data Sync
-   * List sharing among users, with push updates
- * HTML5 offline support (app cache manifest)
+    mvn gwt:run
+
+There is no need to build the project first; Dev Mode uses the app's sources, not the compiled
+classes.
