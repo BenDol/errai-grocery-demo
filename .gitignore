@@ -1,0 +1,8 @@
+src/main/webapp/GroceryList*
+src/main/webapp/bootstrap
+src/main/webapp/WEB-INF/lib
+/target
+.errai/
+.idea/
+gwt-unitCache/
+*.iml
